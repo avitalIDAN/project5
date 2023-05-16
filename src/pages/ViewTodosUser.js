@@ -34,6 +34,15 @@ const ViewTodosUser = ({ listTodos }) => {
     setSortedTodos(sortedList);
   };
 
+  const handleChange = (id) => {
+    const todos= JSON.parse(localStorage.getItem("currentUserTodos"));
+    var spesificTodo=todos[id-1];
+    spesificTodo.completed=!spesificTodo.completed;
+    var updateTodo= todos;
+    updateTodo[id-1]=spesificTodo;
+    localStorage.setItem("currentUserTodos",JSON.stringify(updateTodo));
+  };
+
   return (
     <div>&emsp;
       <select id="selectBox" name="orderby" className="orderby" onChange={changeFunc} autoFocus>
@@ -46,7 +55,10 @@ const ViewTodosUser = ({ listTodos }) => {
         {sortedTodos.map((todo) => (
           <div key={todo.id}>
             <p>&emsp;
-              <input id="checkBox" type="checkbox" defaultChecked={todo.completed} />
+              <input id="checkBox" 
+              type="checkbox" 
+              defaultChecked={todo.completed}
+              onChange={() => handleChange(todo.id)} />
               {todo.title}
             </p>
           </div>

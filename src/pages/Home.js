@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import Styles from "./Home.css";
 import ViewInfoUser from "./ViewInfoUser";
 import ViewTodosUser from "./ViewTodosUser";
 import ViewPostsUser from "./ViewPostsUser";
@@ -95,8 +94,14 @@ export default function Home(){
   };
 
   const showTodos = async () => {
-    const object = getCurrentUser();
-    const listTodos = await getTodosById(object.id);
+    var listTodos=[];
+    if(localStorage.getItem("currentUserTodos") === null){
+      const object = getCurrentUser();
+      listTodos = await getTodosById(object.id);
+      window.localStorage.setItem("currentUserTodos", JSON.stringify(listTodos));
+    } else{
+      listTodos = JSON.parse(localStorage.getItem("currentUserTodos"));
+    }  
     setContentValue(<ViewTodosUser listTodos={listTodos}/>);
   };
 

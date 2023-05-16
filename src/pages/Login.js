@@ -29,7 +29,7 @@ export default function Login() {
     })
       .then(userJSON => { 
         window.localStorage.setItem("currentUser", userJSON);
-        debugger;
+        //debugger;
         window.location.href = "/"; // Redirect to the home page
      }) 
       .catch(error=>alert(""+error));

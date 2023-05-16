@@ -6,8 +6,6 @@ const ViewPostsUser = ({ listPosts, username }) => {
   const [selectedPost, setSelectedPost] = useState(null);
   const [comments, setComments] = useState([]);
  
-
-
   const getCurrentComments = async (id) => {
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`);

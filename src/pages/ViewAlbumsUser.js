@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import ViewPhotos from "./ViewPhotos";
 import './Photos.css';
 
-
-
-
 export default function ViewAlbumsUser({ listAlbums, username }) {
   const [showPhotos, setShowPhotos] = useState("");
 
