@@ -18,7 +18,7 @@ export default function ViewInfoUser({ user }) {
         <br />
         &emsp;&emsp;zipcode: {user.address.zipcode}
         <br />
-        &emsp;&emsp;geo: lat: {user.address.geo.lat} lng: {user.address.geo.lng}
+        &emsp;&emsp;geo: lat: {user.address.geo.lat} &emsp;lng: {user.address.geo.lng}
       </p>
       <p>&emsp; company:</p>
       <p>

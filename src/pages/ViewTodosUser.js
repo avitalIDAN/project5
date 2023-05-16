@@ -144,7 +144,7 @@ const ViewTodosUser = ({ listTodos }) => {
   };
 
   return (
-    <div>
+    <div>&emsp;
       <select id="selectBox" name="orderby" className="orderby" onChange={changeFunc} autoFocus>
         <option value="serial">Sort by Serial</option>
         <option value="performance">Sort by Performance</option>
@@ -154,7 +154,7 @@ const ViewTodosUser = ({ listTodos }) => {
       <div>
         {sortedTodos.map((todo) => (
           <div key={todo.id}>
-            <p>
+            <p>&emsp;
               <input id="checkBox" type="checkbox" defaultChecked={todo.completed} />
               {todo.title}
             </p>

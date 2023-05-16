@@ -1,6 +1,12 @@
-#title, #btnComments{
+#title{
     color: blue;
     background-color: rgba(0,0,0,0);
+}
+#btnComments{
+    color:#D33A2C;
+    background-color: rgba(0,0,0,0);
+    text-align: center;
+    align-items: center;
 }
 
 #postBody{
@@ -10,21 +16,22 @@
     border-radius: 5px;
     box-sizing: border-box;
     
-    text-align: left;
-    align-items:right;
+    text-align: center;
+    margin-left: 5px;
+    /* align-items:right;
     right: 70%;
     display: flex;
-    float: right;
+    float: right; */
 }
 
 #forComments{
     font-weight: bold;
-    color: green;
+    color: blue;
     border-color: #FFFFFF;
     border-radius: 5px;
     box-sizing: border-box;
     text-align: left;
-    align-items:right;
+    align-items:center;
     right: 70%;
     display:block;
     float:inherit;

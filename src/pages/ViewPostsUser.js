@@ -153,6 +153,7 @@ const ViewPostsUser = ({ listPosts }) => {
   const [selectedPost, setSelectedPost] = useState(null);
   const [comments, setComments] = useState([]);
 
+
   const getCurrentComments = async (id) => {
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`);
@@ -171,6 +172,9 @@ const ViewPostsUser = ({ listPosts }) => {
 
   const showComments = async (id) => {
     await getCurrentComments(id);
+  };
+  const HideComments=()=>{
+    setComments("");
   };
 
   const togglePost = (id) => {
@@ -194,19 +198,26 @@ const ViewPostsUser = ({ listPosts }) => {
           </button>
           {selectedPost === post.id && (
             <>
-              <p id="postBody">{post.body}</p>
-              <button id="btnComments" className="fas" onClick={() => showComments(post.id)}>
-                View the comments &#xf086;
-              </button>
+              <p id="postBody">&emsp;&emsp;{post.body}
+                <br/>
+                <button id="btnComments" className="fas" onClick={() => showComments(post.id)}>
+                    View the comments &#xf086;
+                </button>
+              </p>
             </>
           )}
           {selectedPost === post.id && comments.length > 0 && (
             <div id="forComments">
               {comments.map((comment) => (
-                <p key={comment.id}>
-                  {comment.name} <br /> {comment.body}
+                <p key={comment.id} className="far">
+                  &emsp;&emsp;&#xf075; {comment.name} <br /> &emsp;&emsp;{comment.body}
                 </p>
               ))}
+                <p>
+                  <button id="btnComments" className="fas" onClick={() => HideComments()}>
+                    Hide the comments &#xf086;
+                  </button>
+                </p>
             </div>
           )}
         </div>
