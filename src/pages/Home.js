@@ -5,6 +5,7 @@ import ViewInfoUser from "./ViewInfoUser";
 import ViewTodosUser from "./ViewTodosUser";
 import ViewPostsUser from "./ViewPostsUser";
 import ViewAlbumsUser from "./ViewAlbumsUser";
+import "./Home.css";
 
 export default function Home(){
   const [contentValue, setContentValue] = useState("");
@@ -117,10 +118,10 @@ export default function Home(){
      <Link to={`/users/${getCurrentUser().username}/Posts`} id="postsButton" title="Posts" onClick={showPosts}>
       <button className="fas">Show My Posts &#xf07c;</button>       
      </Link>
-     <Link to={`/users/${getCurrentUser().username}/Todos`} id="todosButton" className="fas" title="Todos" onClick={showTodos}>      
+     <Link to={`/users/${getCurrentUser().username}/Todos`} id="todosButton" className="Todo" title="Todos" onClick={showTodos}>      
        <button className="fas">Show My Todos &#xf044;</button>
      </Link>
-     <Link to={`/users/${getCurrentUser().username}/Albums`} id="albumsButton" className="fas" title="Albums" onClick={showAlbums}>       
+     <Link to={`/users/${getCurrentUser().username}/Albums`} id="albumsButton" className="Albums" title="Albums" onClick={showAlbums}>       
        <button className="fas">Show My Albums &#xf03e;</button>
      </Link>
      <div id="locationForContent">{contentValue}</div>

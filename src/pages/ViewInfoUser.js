@@ -3,30 +3,30 @@ import React from "react";
 export default function ViewInfoUser({ user }) {
   return (
     <div>
-      <p>name: {user.name}</p>
-      <p>user name: {user.username}</p>
-      <p>email: {user.email}</p>
-      <p>phone: {user.phone}</p>
-      <p>website: {user.website}</p>
-      <p>address:</p>
+      <p>&emsp; name: {user.name}</p>
+      <p>&emsp; user name: {user.username}</p>
+      <p>&emsp; email: {user.email}</p>
+      <p>&emsp; phone: {user.phone}</p>
+      <p>&emsp; website: {user.website}</p>
+      <p>&emsp; address:</p>
       <p>
-        street: {user.address.street}
+      &emsp;&emsp;street: {user.address.street}
         <br />
-        suite: {user.address.suite}
+        &emsp;&emsp;suite: {user.address.suite}
         <br />
-        city: {user.address.city}
+        &emsp;&emsp;city: {user.address.city}
         <br />
-        zipcode: {user.address.zipcode}
+        &emsp;&emsp;zipcode: {user.address.zipcode}
         <br />
-        geo: lat: {user.address.geo.lat} lng: {user.address.geo.lng}
+        &emsp;&emsp;geo: lat: {user.address.geo.lat} lng: {user.address.geo.lng}
       </p>
-      <p>company:</p>
+      <p>&emsp; company:</p>
       <p>
-        name: {user.company.name}
+      &emsp;&emsp;name: {user.company.name}
         <br />
-        catchPhrase: {user.company.catchPhrase}
+        &emsp;&emsp;catchPhrase: {user.company.catchPhrase}
         <br />
-        bs: {user.company.bs}
+        &emsp;&emsp;bs: {user.company.bs}
       </p>
     </div>
   );
