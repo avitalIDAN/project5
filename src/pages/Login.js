@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import './Login.css';
 
 export default function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const navigate = useNavigate();
 
     const loginFunction = () => {
-        // var username=document.getElementById('username');
-        // var password=document.getElementById('password');
         fetch(`https://jsonplaceholder.typicode.com/users?username=${username}`)
       .then(response => {if(response.ok) {
                             return response.json();    
@@ -34,7 +30,7 @@ export default function Login() {
       .then(userJSON => { 
         window.localStorage.setItem("currentUser", userJSON);
         debugger;
-        window.location.href = "/"; //navigate("/"); // Redirect to the home page
+        window.location.href = "/"; // Redirect to the home page
      }) 
       .catch(error=>alert(""+error));
 
