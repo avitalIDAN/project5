@@ -1,11 +1,12 @@
 import React , { useState} from "react";
+import { Link } from "react-router-dom";
 import ViewPhotos from "./ViewPhotos";
 import './Photos.css';
 
 
 
 
-export default function ViewAlbumsUser({ listAlbums }) {
+export default function ViewAlbumsUser({ listAlbums, username }) {
   const [showPhotos, setShowPhotos] = useState("");
 
   const getFirstPhotoById = async (id) => {
@@ -40,10 +41,10 @@ export default function ViewAlbumsUser({ listAlbums }) {
     <div>
       {listAlbums.map((album) => (
           <div key={album.id}>
-            <button id="album"
-            onClick={() => ViewThePhotos(album.id)}>
+            <Link to={`/users/${username}/Albums/${album.id}`} onClick={() => ViewThePhotos(album.id)}>
+            <button id="album" >
             {album.id}. {album.title}
-             </button>
+             </button></Link>
           </div>
       ))}
       <div id="forPhotos">{showPhotos}</div>

@@ -146,12 +146,14 @@
 
 // export default ViewPostsUser;
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect  } from "react";
+import { Link } from "react-router-dom";
 import './ViewPostsUser.css';
 
-const ViewPostsUser = ({ listPosts }) => {
+const ViewPostsUser = ({ listPosts, username }) => {
   const [selectedPost, setSelectedPost] = useState(null);
   const [comments, setComments] = useState([]);
+ 
 
 
   const getCurrentComments = async (id) => {
@@ -189,13 +191,15 @@ const ViewPostsUser = ({ listPosts }) => {
     <div>
       {listPosts.map((post) => (
         <div key={post.id}>
-          <button
-            id="title"
-            onClick={() => togglePost(post.id)}
-            className={selectedPost === post.id ? "highlighted" : ""}
-          >
-            {post.id}. {post.title}
-          </button>
+          <Link to={`/users/${username}/Posts/${post.id}`} onClick={() => togglePost(post.id)}>
+            <button
+              id="title"
+              
+              className={selectedPost === post.id ? "highlighted" : ""}
+            >
+              {post.id}. {post.title}
+            </button>
+          </Link>
           {selectedPost === post.id && (
             <>
               <p id="postBody">&emsp;&emsp;{post.body}

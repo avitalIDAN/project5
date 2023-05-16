@@ -91,19 +91,19 @@ export default function Home(){
   const showPosts = async () => {
     const object = getCurrentUser();
     const listPosts = await getPostsById(object.id);
-    setContentValue(<ViewPostsUser listPosts={listPosts} />);
+    setContentValue(<ViewPostsUser listPosts={listPosts} username={object.username}/>);
   };
 
   const showTodos = async () => {
     const object = getCurrentUser();
     const listTodos = await getTodosById(object.id);
-    setContentValue(<ViewTodosUser listTodos={listTodos} />);
+    setContentValue(<ViewTodosUser listTodos={listTodos}/>);
   };
 
   const showAlbums = async () => {
     const object = getCurrentUser();
     const listAlbums = await getAlbumsById(object.id);
-    setContentValue(<ViewAlbumsUser listAlbums={listAlbums} />);
+    setContentValue(<ViewAlbumsUser listAlbums={listAlbums} username={object.username} />);
   };
 
   return (

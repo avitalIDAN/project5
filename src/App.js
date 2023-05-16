@@ -18,10 +18,6 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />}>
-          {/* <Route index element={<ViewInfoUser />} />
-          <Route path="/users/:userId/Posts" element={<ViewPostsUser />} />
-          <Route path="/users/:userId/Todos" element={<ViewTodosUser />} />
-          <Route path="/users/:userId/Albums" element={<ViewAlbumsUser />} /> */}
           <Route path="*" element={<NoPage />} />
         </Route>
         <Route path="/login" element={!isLoggedIn ? <Login /> : <Navigate to="/" />} />
