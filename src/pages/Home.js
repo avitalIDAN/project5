@@ -16,7 +16,9 @@ export default function Home(){
 
   const exit = () => {
     localStorage.removeItem("currentUser");
+    localStorage.removeItem("currentUserTodos");
     window.location.href = "/";
+    
   };
 
   const getCurrentUser = () => {
